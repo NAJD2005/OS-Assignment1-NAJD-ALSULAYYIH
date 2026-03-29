@@ -9,7 +9,9 @@ Answer all 4 questions with detailed explanations. Each answer should be **3-5 s
 
 **Question**: Explain the difference between a **thread** and a **process**. Why did we use threads in this assignment instead of creating separate processes?
 
-**Your Answer:**
+**Your Answer:*Processes operate in isolation, making communication complex and resource-intensive. In contrast, threads are lightweight units within a process that share the same memory and resources, requiring less overhead for creation and context switching. This makes threads more efficient for simulations that require frequent switching.
+
+In this assignment, threads were used instead of processes because the scheduler simulation needs to handle multiple tasks efficiently. Threads allow shared access to data structures such as the ready queue and process map without complex communication mechanisms. Therefore, using threads improves performance and simplifies implementation.*
 
 [Write your answer here. Consider: What is a process? What is a thread? How do they differ in terms of memory, resources, creation overhead? Why are threads more suitable for this simulation?]
 
@@ -19,39 +21,40 @@ Answer all 4 questions with detailed explanations. Each answer should be **3-5 s
 
 **Question**: In Round-Robin scheduling, what happens when a process doesn't finish within its time quantum? Explain using an example from your program output.
 
-**Your Answer:**
+A process in Round-Robin scheduling is halted and returned to the end of the ready queue if it does not complete within its time quantum. This ensures that all programs are treated fairly by allowing other processes to receive CPU time. After waiting for its next turn, the procedure will resume where it left off. This cycle keeps going till the procedure is finished.
 
-[Write your answer here. Describe the specific behavior - where does the process go? When does it run again? Give an example from your actual program output showing a process that was re-queued.]
+**Your Answer:* P2 executing quantum [4000ms]
+ Quantum progress: 100%
+ P2 completed quantum 4000ms │ Overall progress: 48%
+Remaining time: 4254ms
+ P2 yields CPU for context switch
+In this instance, process P2 was allotted a time quantum of 4000 ms, yet it took 4254 ms to complete its execution. Consequently, the scheduler executed a context switch and halted P2. The report indicates that P2 was then re-added to the end of the ready queue. This illustrates how Round-Robin scheduling guarantees that every process has an equal chance to run and that no process monopolizes the CPU.
+ P2 added to ready queue │ Burst time: 8254ms | Priority: 1
+*
 
-Example from my output:
-```
-[Paste a relevant snippet from your program output here showing a process being re-queued]
-```
 
-**Explanation of example:**
-[Explain what's happening in the output snippet you pasted]
-
----
 
 ## Question 3: Thread States
 
 **Question**: A thread can be in different states: **New**, **Runnable**, **Running**, **Waiting**, **Terminated**. Walk through these states for one process (P1) from your simulation.
 
 **Your Answer:**
+New
+Process P1 is in the New state when the thread is first created using new Thread(process) inside the addProcessToQueue method. At this stage, the thread exists but has not started execution yet.
+Runnable
+P1 enters the Runnable state after it is added to the ready queue and the scheduler is ready to execute it. This happens before calling start(), where the thread is waiting for CPU allocation.
+Running:
+P1 moves to the Running state when the scheduler selects it and executes currentThread.start(). This is shown in the output:
+P1 executing quantum [3807ms]
 
-[Write your answer here. For each state, explain when P1 enters that state during the simulation. Use your understanding of the code to trace through the lifecycle.]
+During this time, P1 is actively using the CPU.
+Waiting
+A thread enters the Waiting state when it is temporarily paused. In this program, this occurs during Thread.sleep() inside the run() method, where the process simulates execution time. Also, the main thread waits using join() until the current process finishes its quantum.
+Terminated:
+P1 enters the Terminated state after completing its execution. This is shown clearly in the output:
+ P1 finished execution!
 
-1. **New**: [When is P1 in New state?]
-
-2. **Runnable**: [When does P1 become Runnable?]
-
-3. **Running**: [When is P1 Running?]
-
-4. **Waiting**: [When/why would P1 be Waiting?]
-
-5. **Terminated**: [When is P1 Terminated?]
-
----
+At this point, the thread has finished running and will not be scheduled again
 
 ## Question 4: Real-World Applications
 
@@ -59,31 +62,30 @@ Example from my output:
 
 **Your Answer:**
 
-### Example 1: [Name of application/scenario]
+### Example 1: [Time-Sharing Operating Systems]
 
 **Description**: 
-[Describe the real-world scenario or application]
+[By allocating a predetermined time slice to each activity, Round-Robin assures fairness. It gives interactive programs good responsiveness and keeps any activity from taking up all of the CPU.]
 
 **Why Round-Robin works well here**: 
 [Explain why Round-Robin scheduling is suitable. Consider fairness, responsiveness, predictability, etc.]
 
-### Example 2: [Name of application/scenario]
+### Example 2: [Web Server Request Handling]
 
 **Description**: 
-[Describe the real-world scenario or application]
+[Web servers employ threads to manage several user requests concurrently.]
 
 **Why Round-Robin works well here**: 
-[Explain why Round-Robin scheduling is suitable. Consider fairness, responsiveness, predictability, etc.]
+[Round-Robin eliminates delays and enables equitable processing of every request. It guarantees that every request is processed without starvation and increases responsiveness.]
 
 ---
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1. 
-2. 
-3. 
-
+The distinction between processes and threads
+Fairness and round-robin scheduling behavior
+States of execution and thread lifespan
 **Concepts I need to study more:**
-1. 
-2. 
+Advanced scheduling algorithms
+Performance metrics (waiting time, turnaround time)
