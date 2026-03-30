@@ -13,18 +13,18 @@ Document your development process as you work on the assignment. Add entries sho
 
 ## Example Entry Format:
 
-### Entry 1 - [April 1, 2026, 2:30 PM]
-**What I did**: Forked the repository and set up my student ID
+### Entry 1 - [Mar 25, 2026 10:39]
+**What I did**: Set up the project and gethup repository 
 
 **Details**: 
-- Created GitHub account with university email
-- Forked the starter repository
-- Changed student ID on line 92 to my actual ID (441234567)
-- Compiled and ran the program successfully
+- I visited GitHub and created an account
+- rename repository
+- Added my student ID
+-  Trying to run the program
 
-**Challenges**: Had to install JDK first because javac wasn't recognized
+**Challenges**: I visited GitHub and created an account
 
-**Solution**: Downloaded JDK 17 from Oracle website and set PATH variable
+**Solution**: Watching tutorials
 
 **Time spent**: 30 minutes
 
@@ -45,56 +45,63 @@ Document your development process as you work on the assignment. Add entries sho
 
 ---
 
-### Entry 2 - [Date and Time]
-**What I did**: 
+### Entry 2 - [27 mar 2026 am]
+**What I did*Initial code execution and understanding the structure*: 
 
-**Details**: 
+**Details*analyzed process class
+: Observed successful initial execution
+Monitoring the Output
+understood round_robin
 
 **Challenges**: 
-
+understood round_robin
 **Solution**: 
-
+"Reviewing core lessons and exploring external resources."
 **Time spent**: 
-
+1 hour
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**: 
+### Entry 3 - [27 mar 2026 pm10 :46]
+**What I did**: implement feature 1 
+add priory 
+generated random number
 
-**Details**: 
 
 **Challenges**: 
-
+I don't know how to write the priority 
 **Solution**: 
-
+I watched other lessons
 **Time spent**: 
-
+2 hours
 ---
 
-### Entry 4 - [Date and Time]
-**What I did**: 
+### Entry 4 - [27 mar 2026 Am 1.5]
+**What I did**:  implement feature 2
+incermen counter
+display total 
+: add counter
 
+**Challenges**: 
+display total
+**Solution**: 
+I watched other lessons to know how
+**Time spent**: 
+
+--1hour
+
+### Entry 5 - [[28 mar 2026 Am 8.1]
+**What I did**:  implement feature 3
+add varable 
+calculated waiting time
+print
 **Details**: 
 
 **Challenges**: 
-
+calculated waiting time
 **Solution**: 
-
+I review lessons
 **Time spent**: 
-
----
-
-### Entry 5 - [Date and Time]
-**What I did**: 
-
-**Details**: 
-
-**Challenges**: 
-
-**Solution**: 
-
-**Time spent**: 
-
+1hour
 ---
 
 ### Entry 6 - [Optional - Date and Time]
@@ -105,7 +112,7 @@ Document your development process as you work on the assignment. Add entries sho
 **Challenges**: 
 
 **Solution**: 
-
+I review lessons
 **Time spent**: 
 
 ---
@@ -113,9 +120,9 @@ Document your development process as you work on the assignment. Add entries sho
 ## Summary
 
 **Total time spent on assignment**: [X hours]
-
+5:30
 **Most challenging part**: 
-
+calculated waiting time
 **Most interesting learning**: 
-
+incermen counter
 **What I would do differently next time**: 
